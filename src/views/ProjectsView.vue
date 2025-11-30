@@ -3,7 +3,7 @@
     <h2><i class="fas fa-project-diagram"></i> Projects</h2>
     <div class="project-item">
         <h3>Personal Portfolio (AI Enthusiast Project)</h3>
-        <p>The current page is a personal portfolio page showcasing software development skills and professional experience. Built on <strong>Vue.js</strong> for a responsive and modular frontend, utilizing <strong>Cursor AI</strong> for rapid development and code refinement, and managed deployment workflows with <strong>Git</strong> and GitHub Pages.</p>
+        <p>This webpage is a personal portfolio showcasing my skills and professional experience. Built on <strong>Vue.js</strong> for a responsive and modular frontend, utilizing <strong>Cursor AI</strong> for rapid development and code refinement, and managed deployment workflows with <strong>Git</strong> and GitHub Pages.</p>
         <div class="project-tech">
             <span class="tech-tag">Vue.js</span>
             <span class="tech-tag">Cursor AI</span>
