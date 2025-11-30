@@ -1,0 +1,23 @@
+{
+  "name": "cv-dashboard-vue",
+  "version": "1.0.0",
+  "description": "CV Dashboard built with Vue.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.0",
+    "vue-router": "^4.2.0",
+    "@emailjs/browser": "^3.11.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.0",
+    "vite": "^4.3.0"
+  },
+  "keywords": ["vue", "cv", "portfolio", "dashboard"],
+  "author": "Sanjana Shivadathathri",
+  "license": "MIT"
+}

@@ -1,87 +1,46 @@
 // CV Dashboard JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section[id]');
+    // Initialize - show only the first section (About)
+    showSection('profile');
 
-    // Smooth scroll function
-    const smoothScroll = (target) => {
-        const element = document.querySelector(target);
-        if (element) {
-            const headerOffset = 100; // Account for fixed header/navbar
-            const elementPosition = element.offsetTop;
-            const offsetPosition = elementPosition - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    };
-
-    // Add click event to navigation links
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-
-            if (targetSection) {
-                // Hide all sections first
-                sections.forEach(section => {
-                    section.classList.remove('expanded');
-                });
-
-                // Show only the target section
-                targetSection.classList.add('expanded');
-
-                // Smooth scroll to the section
-                smoothScroll(targetId);
-
-                // Update active link
-                navLinks.forEach(navLink => navLink.classList.remove('active'));
-                this.classList.add('active');
-            }
+    // Section navigation function
+    window.showSection = function(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('.card');
+        sections.forEach(section => {
+            section.classList.remove('expanded');
         });
-    });
 
-    // Function to update active navigation link based on visible section
-    const updateActiveNavLink = () => {
-        // Since only one section is visible at a time, find the expanded section
-        const expandedSection = document.querySelector('section.expanded');
-        if (expandedSection) {
-            const sectionId = expandedSection.getAttribute('id');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
+        // Show selected section
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.add('expanded');
         }
+
+        // Update active nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // Find and activate the corresponding nav link
+        const activeLink = document.querySelector(`a[href="#${sectionId}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
+
+        // Smooth scroll to top
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     };
-
-    // Set initial state - show only the first section (About)
-    const firstSection = document.querySelector('#profile');
-    if (firstSection) {
-        firstSection.classList.add('expanded');
-        // Set first nav link as active
-        const firstNavLink = document.querySelector('a[href="#profile"]');
-        if (firstNavLink) {
-            firstNavLink.classList.add('active');
-        }
-    }
-
-    // Update active navigation link on scroll (modified for single section view)
-    window.addEventListener('scroll', updateActiveNavLink);
-
-    // Set initial active link (first section)
-    updateActiveNavLink();
 
     // Add hover effects for cards
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
+            this.style.transform = 'translateY(-2px)';
         });
 
         card.addEventListener('mouseleave', function() {
@@ -110,25 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
             tag.style.transform = 'translateY(0)';
         }, index * 100);
     });
-
-    // Add mobile navigation toggle (for future enhancement)
-    const createMobileNav = () => {
-        if (window.innerWidth <= 768) {
-            const navbar = document.querySelector('.navbar');
-            const navList = document.querySelector('.nav-list');
-
-            // Add toggle functionality for mobile
-            navbar.addEventListener('click', function(e) {
-                if (e.target === navbar || e.target.closest('.nav-container')) {
-                    navList.classList.toggle('mobile-open');
-                }
-            });
-        }
-    };
-
-    // Initialize mobile navigation
-    createMobileNav();
-    window.addEventListener('resize', createMobileNav);
 
     // Contact Form Functionality with EmailJS
     const contactForm = document.getElementById('contactForm');
@@ -199,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Form message display function
     function showFormMessage(message, type) {
         formMessage.textContent = message;
         formMessage.className = `form-message ${type}`;
@@ -208,5 +149,5 @@ document.addEventListener('DOMContentLoaded', function() {
         formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    console.log('CV Dashboard with Navigation and Contact Form loaded successfully!');
+    console.log('CV Dashboard loaded successfully!');
 });
