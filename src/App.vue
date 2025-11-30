@@ -42,7 +42,7 @@
           <li>
             <router-link to="/skills" class="nav-link" active-class="active">
               <i class="fas fa-code"></i> Skills
-            </router-link>
+            </router-link> 
           </li>
           <li>
             <router-link to="/projects" class="nav-link" active-class="active">
