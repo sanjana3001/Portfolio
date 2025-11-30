@@ -21,7 +21,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory('/Portfolio/'),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes
 })
 
