@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header with Profile Photo -->
+        <header class="header">
+            <div class="profile-section">
+                <div class="profile-photo-container">
+                    <img src="/Users/sanj/Documents/Sanj/Sanjana/MyProjects/CursorDemo/Me.png" alt="Profile Photo" class="profile-photo">
+                </div>
+                <div class="profile-info">
+                    <h1 class="name">Sanjana Shivadathathri</h1>
+                    <p class="title">Software Engineer</p>
+                    <p class="contact">sanjanas.3001@gmail.com | +4917644462962</p>
+                    <p class="location">Heilbronn, 74074 | LinkedIn/GitHub</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <ul class="nav-list">
+                    <li><a href="#profile" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                    <li><a href="#hobbies" class="nav-link"><i class="fas fa-heart"></i> Hobbies</a></li>
+                    <li><a href="#awards" class="nav-link"><i class="fas fa-trophy"></i> Awards</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content Grid -->
+        <main class="main-content">
+            <!-- Profile Section -->
+            <section id="profile" class="card profile">
+                <h2><i class="fas fa-user"></i> About Me</h2>
+                <p>A passionate professional with X years of experience in [your field]. Dedicated to delivering high-quality solutions and continuously learning new technologies.</p>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="card experience">
+                <h2><i class="fas fa-briefcase"></i> Experience</h2>
+                <div class="experience-item">
+                    <h3>Senior Developer</h3>
+                    <p class="company">Company Name | 2020 - Present</p>
+                    <ul>
+                        <li>Led development of key features</li>
+                        <li>Mentored junior developers</li>
+                        <li>Improved system performance by 30%</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Software Engineer</h3>
+                    <p class="company">Previous Company | 2018 - 2020</p>
+                    <ul>
+                        <li>Developed web applications</li>
+                        <li>Collaborated with cross-functional teams</li>
+                        <li>Implemented automated testing</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="card education">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="education-item">
+                    <h3>Master's Degree in Computer Science</h3>
+                    <p class="institution">University Name | 2016 - 2018</p>
+                    <p>GPA: 3.8/4.0</p>
+                </div>
+                <div class="education-item">
+                    <h3>Bachelor's Degree in Computer Science</h3>
+                    <p class="institution">University Name | 2012 - 2016</p>
+                    <p>GPA: 3.6/4.0</p>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="card skills">
+                <h2><i class="fas fa-code"></i> Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">C++</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Web Technologies</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Tools & Platforms</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Jenkins</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="card projects">
+                <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+                <div class="project-item">
+                    <h3>E-Commerce Platform</h3>
+                    <p>Full-stack e-commerce solution built with React and Node.js. Features include user authentication, payment processing, and inventory management.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>Task Management App</h3>
+                    <p>Collaborative task management application with real-time updates and team collaboration features.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Socket.io</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>Data Visualization Dashboard</h3>
+                    <p>Interactive dashboard for data analysis and visualization using D3.js and Python backend.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">D3.js</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hobbies Section -->
+            <section id="hobbies" class="card hobbies">
+                <h2><i class="fas fa-heart"></i> Hobbies</h2>
+                <div class="hobbies-grid">
+                    <div class="hobby-item">
+                        <i class="fas fa-camera"></i>
+                        <span>Photography</span>
+                    </div>
+                    <div class="hobby-item">
+                        <i class="fas fa-hiking"></i>
+                        <span>Hiking</span>
+                    </div>
+                    <div class="hobby-item">
+                        <i class="fas fa-book"></i>
+                        <span>Reading</span>
+                    </div>
+                    <div class="hobby-item">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Gaming</span>
+                    </div>
+                    <div class="hobby-item">
+                        <i class="fas fa-music"></i>
+                        <span>Music</span>
+                    </div>
+                    <div class="hobby-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Cooking</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Awards Section -->
+            <section id="awards" class="card awards">
+                <h2><i class="fas fa-trophy"></i> Awards</h2>
+                <div class="award-item">
+                    <h3>Employee of the Year</h3>
+                    <p class="award-org">Company Name | 2023</p>
+                    <p>Recognized for outstanding performance and leadership in project delivery.</p>
+                </div>
+                <div class="award-item">
+                    <h3>Best Innovation Award</h3>
+                    <p class="award-org">Tech Conference | 2022</p>
+                    <p>Awarded for innovative solution in mobile app development.</p>
+                </div>
+                <div class="award-item">
+                    <h3>Academic Excellence</h3>
+                    <p class="award-org">University Name | 2016</p>
+                    <p>Graduated with honors and highest GPA in Computer Science department.</p>
+                </div>
+            </section>
+
+            <!-- Contact Form Section -->
+            <section id="contact" class="card contact">
+                <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
