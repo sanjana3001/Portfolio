@@ -130,9 +130,14 @@ document.addEventListener('DOMContentLoaded', function() {
     createMobileNav();
     window.addEventListener('resize', createMobileNav);
 
-    // Contact Form Functionality
+    // Contact Form Functionality with EmailJS
     const contactForm = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
+
+    // Initialize EmailJS
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init('yKYgOaI9zAhxBNUca'); // Replace with your EmailJS public key
+    }
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -157,24 +162,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Simulate form submission (in a real application, you'd send this to a server)
+            // Prepare form data for EmailJS
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                message: message,
+                to_email: 'sanjanas.3001@gmail.com' // Your email address
+            };
+
             const submitBtn = contactForm.querySelector('.submit-btn');
             const originalText = submitBtn.innerHTML;
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-            // Simulate API call delay
-            setTimeout(() => {
-                showFormMessage('Thank you! Your message has been sent successfully. I\'ll get back to you soon!', 'success');
-                contactForm.reset();
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalText;
+            // Send email using EmailJS
+            emailjs.send('service_nmhik0m', 'template_i6kmwzn', templateParams)
+                .then(function(response) {
+                    console.log('Email sent successfully!', response);
+                    showFormMessage('Thank you! Your message has been sent successfully. I\'ll get back to you soon!', 'success');
+                    contactForm.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
 
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            }, 2000);
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        formMessage.style.display = 'none';
+                    }, 5000);
+                })
+                .catch(function(error) {
+                    console.error('Email sending failed:', error);
+                    showFormMessage('Sorry, there was an error sending your message. Please try again later.', 'error');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                });
         });
     }
 
